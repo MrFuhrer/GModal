@@ -31,7 +31,12 @@ window.popup = function(data) {
         }
 
         if(data.className) {
-            backdrop.classList.add(data.className);
+            if(typeof data.className == "string") backdrop.classList.add(data.className);
+            else {
+                for(var i = 0; i < data.className.length; i++) {
+                    backdrop.classList.add(data.className[i]);
+                }
+            }
         }
 
 
