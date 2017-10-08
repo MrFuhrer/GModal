@@ -1,0 +1,27 @@
+{
+  "name": "gmodal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabatadzeMe/GModal.git"
+  },
+  "author": "Giorgi Tabatadze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TabatadzeMe/GModal/issues"
+  },
+  "homepage": "https://github.com/TabatadzeMe/GModal#readme"
+}

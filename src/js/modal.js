@@ -218,9 +218,7 @@ window.popup = function(data) {
         }
     }
 
-
 };
-
 window.initGModal = function() {
     window.alert = function() {
         var title,text,callback,animation;
@@ -260,7 +258,7 @@ window.initGModal = function() {
 
         var title,text,callback,animation;
 
-        var b = typeof arguments[1] == "string";
+        var b = typeof arguments[1] === "string";
 
         text = b ? arguments[1] : arguments[0];
         title = b ? arguments[0] : null;
