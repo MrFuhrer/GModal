@@ -1,6 +1,6 @@
 {
   "name": "gmodal",
-  "description": "",
+  "description": "Alert, Confirm, Prompt replacement + popup windows",
   "main": "index.html",
   "authors": [
     "Giorgi Tabatadze"

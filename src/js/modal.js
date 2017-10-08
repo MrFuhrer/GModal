@@ -6,7 +6,10 @@ window.popup = function(data) {
     var self = this;
     var backdrop,popupWrapper,popup,header,content,close,footer,animation = "fade";
 
-    {
+    create();
+    afterCreate();
+
+    function create() {
         if(!data.content) return console.error("please add contents to the popup");
         backdrop = document.createElement("div");
         popup = document.createElement("div");
@@ -31,7 +34,7 @@ window.popup = function(data) {
         }
 
         if(data.className) {
-            if(typeof data.className == "string") backdrop.classList.add(data.className);
+            if(typeof data.className === "string") backdrop.classList.add(data.className);
             else {
                 for(var i = 0; i < data.className.length; i++) {
                     backdrop.classList.add(data.className[i]);
@@ -53,7 +56,7 @@ window.popup = function(data) {
         popup.appendChild(content);
 
 
-        if(data.buttons && typeof data.buttons == 'object') {
+        if(data.buttons && typeof data.buttons === 'object') {
             footer = document.createElement("div");
             footer.classList.add("backdrop-footer");
             for(var id = 0; id < data.buttons.length; id++) {
@@ -80,8 +83,6 @@ window.popup = function(data) {
             }
             popup.appendChild(footer);
         }
-
-        afterCreate();
     }
 
 
@@ -107,7 +108,7 @@ window.popup = function(data) {
     this.exit = function() {
         self.initAnimation();
         setTimeout(function(){
-            if(backdrop.parentNode == document.body) {
+            if(backdrop.parentNode === document.body) {
                 document.body.removeChild(backdrop);
             }
             if(!document.querySelector(".gpopup-backdrop")) {
@@ -121,7 +122,7 @@ window.popup = function(data) {
 
     this.show = function() {
 
-        if(typeof self.initAnimation == "function") {
+        if(typeof self.initAnimation === "function") {
             self.initAnimation();
         }
 
@@ -136,14 +137,14 @@ window.popup = function(data) {
             backdrop.querySelector(".focus").focus();
         }
 
-        if(typeof self.animate == "function") {
+        if(typeof self.animate === "function") {
             self.animate();
         }
         return self;
     };
 
     this.initAnimation = function() {
-        if(typeof self.animations[self.animation]!="object") {
+        if(typeof self.animations[self.animation]!=="object") {
             self.animation = "fade";
         }
         self.animations[self.animation].init(this.root);
@@ -223,7 +224,7 @@ window.initGModal = function() {
     window.alert = function() {
         var title,text,callback,animation;
 
-        var b = typeof arguments[1] == "string";
+        var b = typeof arguments[1] === "string";
 
         text = b ? arguments[1] : arguments[0];
         title = b ? arguments[0] : null;

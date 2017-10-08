@@ -23,4 +23,14 @@ gulp.task("js", function() {
         .pipe(gulp.dest("dist/js/"))
 });
 
-gulp.task('default', ['css','js']);
+gulp.task('build', ['css','js']);
+
+gulp.task('watch-css', function() {
+    gulp.watch("src/css/*.css", ['css']);
+});
+
+gulp.task('watch-js', function() {
+    gulp.watch("src/js/*.js", ['js']);
+});
+
+gulp.task('watch', ['watch-css', 'watch-js']);
