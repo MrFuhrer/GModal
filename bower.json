@@ -1,0 +1,17 @@
+{
+  "name": "gmodal",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Giorgi Tabatadze"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TabatadzeMe/GModal",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
