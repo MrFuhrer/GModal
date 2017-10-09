@@ -1,3 +1,9 @@
+.gpopup-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow-y: auto;
+}
 .gpopup-backdrop {
     position: fixed;
     margin: 0;
@@ -7,16 +13,16 @@
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.7);
-    overflow-y: auto;
     z-index: 101;
 }
-.gpopup-backdrop .gpopup-wrapper {
+.gpopup-container .gpopup-wrapper {
     position: absolute;
     width: 100%;
     top: 25%;
     text-align: center;
+    z-index: 102;
 }
-.gpopup-backdrop .gpopup-wrapper .gpopup {
+.gpopup-container .gpopup-wrapper .gpopup {
     min-width: 270px;
     min-height: 50px;
     background: #FFF;
@@ -27,7 +33,7 @@
     text-align: left;
 }
 
-.gpopup-backdrop .gpopup .header {
+.gpopup-container .gpopup .header {
     position: relative;
     background: #F0F0F0;
     font-size: 16px;
@@ -35,12 +41,12 @@
     padding: 10px;
 }
 
-.gpopup-backdrop .gpopup .gpopup-content {
+.gpopup-container .gpopup .gpopup-content {
     position: relative;
     padding: 15px;
 }
 
-.gpopup-backdrop .gpopup .close {
+.gpopup-container .gpopup .close {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -49,7 +55,7 @@
     padding: 0 3px;
     color: #444;
 }
-.gpopup-backdrop .backdrop-footer {
+.gpopup-container .backdrop-footer {
     text-align: right;
     padding: 10px;
     border-top: 1px solid #E9E9E9;
@@ -72,10 +78,10 @@ button.gpopup-btn:hover {
 button.gpopup-btn:active {
     background: #F9F9F9;
 }
-.gpopup-backdrop.noclose .gpopup .close {
+.gpopup-container.noclose .gpopup .close {
     display: none;
 }
-.gpopup-backdrop .gpopup .gpopup-content input.gpopup-input {
+.gpopup-container .gpopup .gpopup-content input.gpopup-input {
     width: calc(100% - 12px);
     padding: 10px 5px;
     border: 1px solid #E9E9E9;

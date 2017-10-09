@@ -4,13 +4,14 @@
 
 window.popup = function(data) {
     var self = this;
-    var backdrop,popupWrapper,popup,header,content,close,footer,animation = "fade";
+    var wrapper,backdrop,popupWrapper,popup,header,content,close,footer,animation = "fade";
 
     create();
     afterCreate();
 
     function create() {
         if(!data.content) return console.error("please add contents to the popup");
+        wrapper = document.createElement("div");
         backdrop = document.createElement("div");
         popup = document.createElement("div");
         popupWrapper = document.createElement("div");
@@ -20,6 +21,7 @@ window.popup = function(data) {
         close.innerHTML = "&#10006;";
         content.innerHTML=data.content;
 
+        wrapper.classList.add("gpopup-container");
         backdrop.classList.add("gpopup-backdrop");
         popup.classList.add("gpopup");
         popupWrapper.classList.add("gpopup-wrapper");
@@ -27,17 +29,18 @@ window.popup = function(data) {
         close.classList.add("close");
 
         popupWrapper.appendChild(popup);
-        backdrop.appendChild(popupWrapper);
+        wrapper.appendChild(backdrop);
+        wrapper.appendChild(popupWrapper);
 
         if(data.animation) {
             self.animation = data.animation;
         }
 
         if(data.className) {
-            if(typeof data.className === "string") backdrop.classList.add(data.className);
+            if(typeof data.className === "string") wrapper.classList.add(data.className);
             else {
                 for(var i = 0; i < data.className.length; i++) {
-                    backdrop.classList.add(data.className[i]);
+                    wrapper.classList.add(data.className[i]);
                 }
             }
         }
@@ -91,7 +94,7 @@ window.popup = function(data) {
             self.exit();
         },false);
 
-        self.root = backdrop;
+        self.root = wrapper;
 
         if(data.exitOnBackdropClick) {
             backdrop.addEventListener('click',function() {
@@ -129,7 +132,7 @@ window.popup = function(data) {
         }
 
         document.body.style.overflowY = "hidden";
-        document.body.appendChild(backdrop);
+        document.body.appendChild(wrapper);
 
 
         if(popup.clientHeight>window.innerHeight*0.4) {
