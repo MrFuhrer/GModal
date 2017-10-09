@@ -113,10 +113,10 @@ window.popup = function(data) {
     this.exit = function() {
         self.initAnimation();
         setTimeout(function(){
-            if(backdrop.parentNode === document.body) {
-                document.body.removeChild(backdrop);
+            if(wrapper.parentNode === document.body) {
+                document.body.removeChild(wrapper);
             }
-            if(!document.querySelector(".gpopup-backdrop")) {
+            if(!document.querySelector(".gpopup-container")) {
                 document.body.style.overflowY = "auto";
             }
             if(data.closeCallback) {
