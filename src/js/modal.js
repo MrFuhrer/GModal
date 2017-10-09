@@ -28,9 +28,10 @@ window.popup = function(data) {
         content.classList.add("gpopup-content");
         close.classList.add("close");
 
-        popupWrapper.appendChild(popup);
+        // popupWrapper.appendChild(popup);
+        wrapper.appendChild(popup);
         wrapper.appendChild(backdrop);
-        wrapper.appendChild(popupWrapper);
+        // wrapper.appendChild(popupWrapper);
 
         if(data.animation) {
             self.animation = data.animation;
@@ -100,12 +101,6 @@ window.popup = function(data) {
             backdrop.addEventListener('click',function() {
                 self.exit();
             },false);
-
-            backdrop.querySelectorAll("*:not(.gpopup-wrapper)").forEach(function(el) {
-                el.addEventListener('click',function(e){
-                    e.stopPropagation();
-                },false);
-            })
         }
     }
 
@@ -136,10 +131,10 @@ window.popup = function(data) {
 
 
         if(popup.clientHeight>window.innerHeight*0.4) {
-            popupWrapper.style.top = "10%";
+            popup.style.top = "10%";
         }
-        if(backdrop.querySelector(".focus")) {
-            backdrop.querySelector(".focus").focus();
+        if(popup.querySelector(".focus")) {
+            popup.querySelector(".focus").focus();
         }
 
         if(typeof self.animate === "function") {
