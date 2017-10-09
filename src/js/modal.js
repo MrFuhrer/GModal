@@ -98,9 +98,11 @@ window.popup = function(data) {
                 self.exit();
             },false);
 
-            popup.addEventListener('click',function(e){
-                e.stopPropagation();
-            },false);
+            backdrop.querySelectorAll("*:not(.gpopup-wrapper)").forEach(function(el) {
+                el.addEventListener('click',function(e){
+                    e.stopPropagation();
+                },false);
+            })
         }
     }
 
