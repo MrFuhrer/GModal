@@ -1,6 +1,6 @@
 {
   "name": "gmodal",
-  "version": "1.0.1",
+  "version": "1.0.8",
   "description": "Alert, Confirm, Prompt replacement + popup windows",
   "main": "index.html",
   "dependencies": {},
