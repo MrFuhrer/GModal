@@ -1,6 +1,6 @@
 {
   "name": "gmodal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Alert, Confirm, Prompt replacement + popup windows",
   "main": "dist/js/modal.min.js",
   "dependencies": {},
