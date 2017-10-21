@@ -14,8 +14,11 @@
     function showModal() {
         var p = new popup({
             title: "Popup title",
-            content: "Popup content",
-            exitOnBackdropClick: true
+            content: "Popup content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content" +
+            "<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content" +
+            "<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br><strong>The end</strong>",
+            exitOnBackdropClick: true,
+            animation: "slideRight"
         });
         p.show();
     }

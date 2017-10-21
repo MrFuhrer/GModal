@@ -133,6 +133,12 @@ window.popup = function(data) {
         if(popup.clientHeight>window.innerHeight*0.4) {
             popup.style.top = "10%";
         }
+
+        console.log(popup.clientHeight + popup.offsetTop, window.oute);
+        if(popup.clientHeight + popup.offsetTop >= window.outerHeight) {
+            this.root.style.overflowY = "scroll";
+        }
+
         if(popup.querySelector(".focus")) {
             popup.querySelector(".focus").focus();
         }
@@ -168,52 +174,52 @@ window.popup = function(data) {
         slideDown: {
             init: function(root) {
                 root.style.opacity = "0";
-                root.querySelector(".gpopup").style.transform = "translate(0,-100px)";
+                root.querySelector(".gpopup").style.marginTop = "-100px";
                 root.style.transition = "opacity 0.3s ease-in";
-                root.querySelector(".gpopup").style.transition = "transform 0.3s ease-out";
+                root.querySelector(".gpopup").style.transition = "margin-top 0.3s ease-out";
             },
             animate: function(root) {
                 root.style.opacity = "1";
-                root.querySelector(".gpopup").style.transform = "translate(0,0)";
+                root.querySelector(".gpopup").style.marginTop = "0";
             },
             time: 300
         },
         slideUp: {
             init: function(root) {
                 root.style.opacity = "0";
-                root.querySelector(".gpopup").style.transform = "translate(0,100px)";
+                root.querySelector(".gpopup").style.marginTop = "100px";
                 root.style.transition = "opacity 0.3s ease-in";
-                root.querySelector(".gpopup").style.transition = "transform 0.3s ease-out";
+                root.querySelector(".gpopup").style.transition = "margin-top 0.3s ease-out";
             },
             animate: function(root) {
                 root.style.opacity = "1";
-                root.querySelector(".gpopup").style.transform = "translate(0,0)";
+                root.querySelector(".gpopup").style.marginTop = "0";
             },
             time: 300
         },
         slideLeft: {
             init: function(root) {
                 root.style.opacity = "0";
-                root.querySelector(".gpopup").style.transform = "translate(100px,0)";
+                root.querySelector(".gpopup").style.marginLeft = "100px";
                 root.style.transition = "opacity 0.3s ease-in";
-                root.querySelector(".gpopup").style.transition = "transform 0.3s ease-out";
+                root.querySelector(".gpopup").style.transition = "margin-left 0.3s ease-out";
             },
             animate: function(root) {
                 root.style.opacity = "1";
-                root.querySelector(".gpopup").style.transform = "translate(0,0)";
+                root.querySelector(".gpopup").style.marginLeft = "0";
             },
             time: 300
         },
         slideRight: {
             init: function(root) {
                 root.style.opacity = "0";
-                root.querySelector(".gpopup").style.transform = "translate(-100px)";
+                root.querySelector(".gpopup").style.marginLeft = "-100px";
                 root.style.transition = "opacity 0.3s ease-in";
-                root.querySelector(".gpopup").style.transition = "transform 0.3s ease-out";
+                root.querySelector(".gpopup").style.transition = "margin-left 0.3s ease-out";
             },
             animate: function(root) {
                 root.style.opacity = "1";
-                root.querySelector(".gpopup").style.transform = "translate(0,0)";
+                root.querySelector(".gpopup").style.marginLeft = "0";
             },
             time: 300
         }

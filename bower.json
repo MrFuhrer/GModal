@@ -2,7 +2,7 @@
   "name": "gmodal",
   "description": "Alert, Confirm, Prompt replacement + popup windows",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "dist/js/modal.min.js",
   "authors": [
     "Giorgi Tabatadze"
   ],
