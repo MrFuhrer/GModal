@@ -15,7 +15,7 @@ window.popup = function(data) {
         backdrop = document.createElement("div");
         popup = document.createElement("div");
         popupWrapper = document.createElement("div");
-        content = document.createElement("div");
+        content = document.createElement ("div");
         close = document.createElement("span");
 
         close.innerHTML = "&#10006;";
@@ -104,6 +104,7 @@ window.popup = function(data) {
         }
     }
 
+    var _scrollTop;
 
     this.exit = function() {
         self.initAnimation();
@@ -117,6 +118,10 @@ window.popup = function(data) {
             if(data.closeCallback) {
                 data.closeCallback();
             }
+
+            document.body.classList.remove("modal-active");
+            if(_scrollTop)
+                document.body.scrollTop = _scrollTop;
         },self.animations[self.animation].time);
     };
 
@@ -129,12 +134,10 @@ window.popup = function(data) {
         document.body.style.overflowY = "hidden";
         document.body.appendChild(wrapper);
 
-
         if(popup.clientHeight>window.innerHeight*0.4) {
             popup.style.top = "10%";
         }
 
-        console.log(popup.clientHeight + popup.offsetTop, window.oute);
         if(popup.clientHeight + popup.offsetTop >= window.outerHeight) {
             this.root.style.overflowY = "scroll";
         }
@@ -146,6 +149,10 @@ window.popup = function(data) {
         if(typeof self.animate === "function") {
             self.animate();
         }
+
+        _scrollTop = document.body.scrollTop;
+        document.body.classList.add("modal-active");
+
         return self;
     };
 

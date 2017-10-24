@@ -5,8 +5,14 @@
     <title>Title</title>
     <link rel="stylesheet" href="src/css/modal.css">
     <script src="src/js/modal.js"></script>
+
+    <style>
+        body.modal-active > *:not(.gpopup-container) {
+            display: none;
+        }
+    </style>
 </head>
-<body>
+<body style="padding-top: 500px; height: 1500px">
 <button onclick="alert('Hello, i\'m an alert')">Show Alert</button>
 <button onclick="showModal()">Show Modal</button>
 <script>
