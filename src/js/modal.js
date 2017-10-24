@@ -15,7 +15,7 @@ window.popup = function(data) {
         backdrop = document.createElement("div");
         popup = document.createElement("div");
         popupWrapper = document.createElement("div");
-        content = document.createElement("div");
+        content = document.createElement ("div");
         close = document.createElement("span");
 
         close.innerHTML = "&#10006;";
