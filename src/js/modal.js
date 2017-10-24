@@ -6,7 +6,7 @@ window.popup = function(data) {
     var self = this;
     var wrapper,backdrop,popupWrapper,popup,header,content,close,footer,animation = "fade";
  
-    create();
+    create(); 
     afterCreate();
 
     function create() {
